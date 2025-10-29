@@ -5,6 +5,7 @@ import Layout from "@/components/organisms/Layout";
 // Lazy load all page components
 const BoardView = lazy(() => import("@/components/pages/BoardView"));
 const RoadmapView = lazy(() => import("@/components/pages/RoadmapView"));
+const ChangelogView = lazy(() => import("@/components/pages/ChangelogView"));
 const NotFound = lazy(() => import("@/components/pages/NotFound"));
 
 // Suspense fallback component
@@ -51,6 +52,14 @@ const mainRoutes = [
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <RoadmapView />
+      </Suspense>
+)
+  },
+  {
+    path: "changelog",
+    element: (
+      <Suspense fallback={<LoadingFallback />}>
+        <ChangelogView />
       </Suspense>
     )
   },

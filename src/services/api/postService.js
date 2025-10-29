@@ -86,8 +86,16 @@ export const postService = {
         p.title.toLowerCase().includes(searchQuery) ||
         p.description.toLowerCase().includes(searchQuery)
       );
-    }
+}
     
     return filtered.map(post => ({ ...post }));
+  },
+
+  async getCompleted() {
+    await delay(300);
+    return posts
+      .filter(p => p.status === "completed")
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      .map(post => ({ ...post }));
   }
 };

@@ -9,11 +9,12 @@ const Header = ({ onSubmitClick, onSearch, onExport, showExport = true }) => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
+const navItems = [
     { name: "Feature Requests", path: "/", board: "feature-requests" },
     { name: "Bug Reports", path: "/bug-reports", board: "bug-reports" },
     { name: "General", path: "/general", board: "general" },
-    { name: "Roadmap", path: "/roadmap" }
+    { name: "Roadmap", path: "/roadmap" },
+    { name: "Changelog", path: "/changelog" }
   ];
 
   const isActiveTab = (path) => {
