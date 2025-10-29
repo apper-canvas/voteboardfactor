@@ -1,0 +1,66 @@
+[
+  {
+    "Id": 1,
+    "postId": 1,
+    "parentId": null,
+    "text": "This would be really helpful! I work mostly at night and the bright interface is quite harsh.",
+    "userName": "Sarah Miller",
+    "createdAt": "2024-01-15T11:45:00Z"
+  },
+  {
+    "Id": 2,
+    "postId": 1,
+    "parentId": null,
+    "text": "Agreed! Dark mode is a must-have feature in 2024.",
+    "userName": "Mike Johnson",
+    "createdAt": "2024-01-15T12:20:00Z"
+  },
+  {
+    "Id": 3,
+    "postId": 1,
+    "parentId": 2,
+    "text": "Absolutely! Most of the apps I use daily have dark mode now.",
+    "userName": "Emma Davis",
+    "createdAt": "2024-01-15T12:35:00Z"
+  },
+  {
+    "Id": 4,
+    "postId": 3,
+    "parentId": null,
+    "text": "Same issue here. The app worked fine before the update.",
+    "userName": "Alex Chen",
+    "createdAt": "2024-01-13T10:30:00Z"
+  },
+  {
+    "Id": 5,
+    "postId": 3,
+    "parentId": null,
+    "text": "Experiencing this on Android as well. Please prioritize this fix!",
+    "userName": "Rachel Green",
+    "createdAt": "2024-01-13T11:15:00Z"
+  },
+  {
+    "Id": 6,
+    "postId": 6,
+    "parentId": null,
+    "text": "This integration works great! Really happy with the implementation.",
+    "userName": "Tom Wilson",
+    "createdAt": "2024-01-16T09:20:00Z"
+  },
+  {
+    "Id": 7,
+    "postId": 2,
+    "parentId": null,
+    "text": "CSV export would save us so much time in our monthly reporting.",
+    "userName": "Lisa Anderson",
+    "createdAt": "2024-01-14T15:10:00Z"
+  },
+  {
+    "Id": 8,
+    "postId": 4,
+    "parentId": null,
+    "text": "Keyboard shortcuts would definitely speed up my workflow!",
+    "userName": "David Brown",
+    "createdAt": "2024-01-12T17:30:00Z"
+  }
+]

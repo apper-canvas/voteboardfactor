@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "name": "Feature Requests",
+    "description": "Suggest new features and improvements",
+    "postCount": 6
+  },
+  {
+    "Id": 2,
+    "name": "Bug Reports",
+    "description": "Report bugs and technical issues",
+    "postCount": 3
+  },
+  {
+    "Id": 3,
+    "name": "General",
+    "description": "General feedback and suggestions",
+    "postCount": 1
+  }
+]

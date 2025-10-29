@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "title": "Dark mode theme option",
+    "description": "It would be great to have a dark mode theme to reduce eye strain during long work sessions. Many modern applications now support this feature and it's become a standard user expectation.",
+    "board": "feature-requests",
+    "status": "planned",
+    "votes": 47,
+    "commentCount": 12,
+    "createdAt": "2024-01-15T10:30:00Z",
+    "userVoted": true
+  },
+  {
+    "Id": 2,
+    "title": "Export data to CSV",
+    "description": "Allow users to export their data in CSV format for external analysis and reporting purposes.",
+    "board": "feature-requests",
+    "status": "under-review",
+    "votes": 23,
+    "commentCount": 8,
+    "createdAt": "2024-01-14T14:20:00Z",
+    "userVoted": false
+  },
+  {
+    "Id": 3,
+    "title": "Mobile app crashing on startup",
+    "description": "The mobile app crashes immediately when opening on iOS 17. This started happening after the latest update.",
+    "board": "bug-reports",
+    "status": "in-progress",
+    "votes": 89,
+    "commentCount": 15,
+    "createdAt": "2024-01-13T09:15:00Z",
+    "userVoted": true
+  },
+  {
+    "Id": 4,
+    "title": "Keyboard shortcuts for power users",
+    "description": "Add keyboard shortcuts for common actions like creating new items, searching, and navigation to improve productivity for power users.",
+    "board": "feature-requests",
+    "status": "under-review",
+    "votes": 34,
+    "commentCount": 6,
+    "createdAt": "2024-01-12T16:45:00Z",
+    "userVoted": false
+  },
+  {
+    "Id": 5,
+    "title": "Slow loading on dashboard",
+    "description": "Dashboard takes more than 10 seconds to load with large datasets. Performance optimization needed.",
+    "board": "bug-reports",
+    "status": "planned",
+    "votes": 56,
+    "commentCount": 9,
+    "createdAt": "2024-01-11T11:30:00Z",
+    "userVoted": true
+  },
+  {
+    "Id": 6,
+    "title": "Integration with Slack notifications",
+    "description": "Would love to receive notifications in our Slack channel when important updates happen in the application.",
+    "board": "feature-requests",
+    "status": "completed",
+    "votes": 78,
+    "commentCount": 20,
+    "createdAt": "2024-01-10T13:20:00Z",
+    "userVoted": false
+  },
+  {
+    "Id": 7,
+    "title": "Better mobile experience",
+    "description": "The mobile web version needs improvements in terms of touch interactions and responsive design.",
+    "board": "general",
+    "status": "under-review",
+    "votes": 42,
+    "commentCount": 11,
+    "createdAt": "2024-01-09T15:10:00Z",
+    "userVoted": true
+  },
+  {
+    "Id": 8,
+    "title": "Bulk actions for data management",
+    "description": "Allow users to select multiple items and perform bulk actions like delete, edit, or move to improve efficiency.",
+    "board": "feature-requests",
+    "status": "rejected",
+    "votes": 18,
+    "commentCount": 4,
+    "createdAt": "2024-01-08T08:45:00Z",
+    "userVoted": false
+  },
+  {
+    "Id": 9,
+    "title": "Search filters not working properly",
+    "description": "The advanced search filters are not applying correctly and returning incorrect results.",
+    "board": "bug-reports",
+    "status": "completed",
+    "votes": 67,
+    "commentCount": 13,
+    "createdAt": "2024-01-07T12:15:00Z",
+    "userVoted": true
+  },
+  {
+    "Id": 10,
+    "title": "Two-factor authentication",
+    "description": "Add 2FA support for enhanced security. This is becoming essential for business applications.",
+    "board": "feature-requests",
+    "status": "in-progress",
+    "votes": 92,
+    "commentCount": 18,
+    "createdAt": "2024-01-06T09:30:00Z",
+    "userVoted": false
+  }
+]
