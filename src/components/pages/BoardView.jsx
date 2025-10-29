@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "@/components/organisms/Header";
-import FilterSidebar from "@/components/organisms/FilterSidebar";
-import PostGrid from "@/components/organisms/PostGrid";
+import { postService } from "@/services/api/postService";
 import PostDetailModal from "@/components/organisms/PostDetailModal";
 import SubmitPostModal from "@/components/organisms/SubmitPostModal";
+import PostGrid from "@/components/organisms/PostGrid";
+import Header from "@/components/organisms/Header";
+import FilterSidebar from "@/components/organisms/FilterSidebar";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
-import { postService } from "@/services/api/postService";
 
 const BoardView = () => {
   const { board = "feature-requests" } = useParams();
@@ -22,14 +22,68 @@ const BoardView = () => {
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState({ status: "", sortBy: "recent" });
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', { 
+      year: 'numeric', 
+      month: '2-digit', 
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
 
+  const escapeCSV = (str) => {
+    if (str === null || str === undefined) return '';
+    const stringValue = String(str);
+    if (stringValue.includes('"') || stringValue.includes(',') || stringValue.includes('\n')) {
+      return `"${stringValue.replace(/"/g, '""')}"`;
+    }
+    return stringValue;
+  };
+
+  const handleExportCSV = () => {
+    if (filteredPosts.length === 0) {
+      toast.info('No feedback data to export');
+      return;
+    }
+
+    const headers = ['Title', 'Description', 'Status', 'Board', 'Votes', 'Comments', 'Created Date'];
+    const csvContent = [
+      headers.join(','),
+      ...filteredPosts.map(post => [
+        escapeCSV(post.title),
+        escapeCSV(post.description),
+        escapeCSV(post.status),
+        escapeCSV(post.board),
+        escapeCSV(post.votes),
+        escapeCSV(post.commentCount),
+        escapeCSV(formatDate(post.createdAt))
+      ].join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', `feedback-export-${timestamp}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast.success('Feedback data exported successfully');
+  };
   useEffect(() => {
     loadPosts();
   }, [board]);
 
   useEffect(() => {
-    applyFiltersAndSearch();
-  }, [posts, filters, searchQuery]);
+applyFiltersAndSearch();
+  }, [posts, filters, searchQuery, formatDate, escapeCSV]);
 
   const loadPosts = async () => {
     try {
@@ -75,7 +129,7 @@ const BoardView = () => {
         break;
     }
 
-    setFilteredPosts(filtered);
+setFilteredPosts(filtered);
   };
 
   const handleVote = async (postId) => {
@@ -121,14 +175,16 @@ const BoardView = () => {
     setFilters(newFilters);
   };
 
-  if (loading) return <Loading />;
+if (loading) return <Loading />;
   if (error) return <Error message={error} onRetry={loadPosts} />;
 
   return (
     <div className="min-h-screen bg-background">
-      <Header 
+<Header 
         onSubmitClick={() => setShowSubmitModal(true)}
         onSearch={handleSearch}
+        onExport={handleExportCSV}
+        showExport={true}
       />
       
       <div className="max-w-7xl mx-auto flex">

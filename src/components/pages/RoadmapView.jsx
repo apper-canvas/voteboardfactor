@@ -107,9 +107,10 @@ const RoadmapView = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header 
+<Header 
         onSubmitClick={() => setShowSubmitModal(true)}
-        onSearch={() => {}} // Roadmap doesn't need search for now
+        onSearch={() => {}}
+        showExport={false}
       />
       
       <div className="max-w-7xl mx-auto p-6">

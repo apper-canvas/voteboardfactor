@@ -4,7 +4,7 @@ import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import SearchBar from "@/components/molecules/SearchBar";
 
-const Header = ({ onSubmitClick, onSearch }) => {
+const Header = ({ onSubmitClick, onSearch, onExport, showExport = true }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,15 +56,20 @@ const Header = ({ onSubmitClick, onSearch }) => {
           </div>
 
           {/* Search and Submit Button */}
-          <div className="flex items-center space-x-4">
+<div className="flex items-center space-x-4">
             <div className="hidden sm:block w-64">
               <SearchBar onSearch={onSearch} />
             </div>
+            {showExport && (
+              <Button onClick={onExport} size="small" variant="outline">
+                <ApperIcon name="Download" className="w-4 h-4 mr-2" />
+                Export CSV
+              </Button>
+            )}
             <Button onClick={onSubmitClick} size="small">
               <ApperIcon name="Plus" className="w-4 h-4 mr-2" />
               Submit
             </Button>
-            
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
